@@ -23,9 +23,9 @@ namespace pfbackup
         public uint BackupCopies = 5;
         public enum PFVersion
         {
-            V20X_V225,
-            V226_V232P1,
-            V233_LATER
+            V20X_V225, //0
+            V226_V232P1, //1
+            V233_LATER //2
         }
     }
     class Program
@@ -144,9 +144,12 @@ namespace pfbackup
                                 switch (fireWall.pfVersion)
                                 {
                                     case PFSenseObject.PFVersion.V20X_V225:
-                                    case PFSenseObject.PFVersion.V226_V232P1:
                                         dDownload.Add("donotbackuprrd", "on");
                                         dDownload.Add("Submit", "Download configuration");
+                                        break;
+                                    case PFSenseObject.PFVersion.V226_V232P1:
+                                        dDownload.Add("donotbackuprrd", "on");
+                                        dDownload.Add("Submit", "Download configuration as XML");
                                         break;
                                     case PFSenseObject.PFVersion.V233_LATER:
                                         dDownload.Add("donotbackuprrd", "yes");
