@@ -21,3 +21,11 @@ Generate encrypted password with
 }
 ]
 ```
+Based loosely on: https://doc.pfsense.org/index.php/Remote_Config_Backup
+
+pfVersion Values:
+```
+0 = 2.0.x through 2.2.5
+1 = 2.2.6 through 2.3.2-p1
+2 = 2.3.3 and Later
+```
